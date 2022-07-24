@@ -33,7 +33,7 @@ int         ft_echo(char **args)
     {
         while (args[i] && !ft_strncmp(args[i], "-n", 2))
         {
-            n_opt = 1; //hna l9a l flag -n
+            n_opt = 1;
             i++;
         }
         while (args[i])
