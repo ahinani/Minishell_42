@@ -6,7 +6,7 @@
 /*   By: ahinani <ahinani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 17:06:04 by ahinani           #+#    #+#             */
-/*   Updated: 2022/07/23 11:21:42 by ahinani          ###   ########.fr       */
+/*   Updated: 2022/07/23 17:28:55 by ahinani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,15 @@ typedef struct s_data
 
 t_data	g_;
 
+//utils
+void		ft_free(char **split);
+
 //builtins
 int         ft_echo(char **args);
 char    	**splitted_echo(char *str);
 int     	ft_env(char **str);
+int     	ft_pwd(char **str);
+int 		ft_exit(char **str);
 
 //execution
 int         is_builtin(char *cmd);

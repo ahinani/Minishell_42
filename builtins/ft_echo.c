@@ -6,7 +6,7 @@
 /*   By: ahinani <ahinani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 15:09:31 by ahinani           #+#    #+#             */
-/*   Updated: 2022/07/20 19:16:36 by ahinani          ###   ########.fr       */
+/*   Updated: 2022/07/24 19:59:12 by ahinani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ int         ft_echo(char **args)
     int i;
     int n_opt;
 
-    i = 1; //bach ybda mn dakchi li mura l echo
-    n_opt = 0; //hna ghaykun ba9i mal9ach l flag   
+    i = 1;
+    n_opt = 0;
     if (nb_args(args) > 1)
     {
         while (args[i] && !ft_strncmp(args[i], "-n", 2))
@@ -44,7 +44,7 @@ int         ft_echo(char **args)
 			i++;
 		}
     }
-    if (n_opt == 0) //ila makan hta chi args ghay returni \n
+    if (n_opt == 0)
         write(1, "\n", 1);
     return (0);
 }

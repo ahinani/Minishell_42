@@ -6,13 +6,16 @@
 #    By: ahinani <ahinani@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/18 16:33:34 by ahinani           #+#    #+#              #
-#    Updated: 2022/07/22 20:01:09 by ahinani          ###   ########.fr        #
+#    Updated: 2022/07/24 19:56:31 by ahinani          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 MINISHELL		=		builtins/ft_echo.c		\
 						builtins/ft_env.c		\
+						builtins/ft_pwd.c		\
+						builtins/ft_exit.c		\
 						execution/builtins.c	\
+						utils/ft_free.c			\
 						minishell.c
 					
 
@@ -21,7 +24,7 @@ OBJ		=	$(MINISHELL:.c=.o)
 
 CC			=	gcc
 RM			=	rm -rf
-CFLAGS		=	-Wall #-Wextra -Werror
+CFLAGS		=	-Wall -Wextra -Werror
 NAME		=	minishell
 HEADER		=	include/minishell.h
 LIBFT		=	libft/libft.a
@@ -36,7 +39,7 @@ $(NAME)		:	$(OBJ) $(HEADER) $(LIBFT)
 	@$(CC) $(CFLAGS) -I $(shell brew --prefix readline)/include -c $< -o $(<:.c=.o)
 
 $(LIBFT)		:
-	@make all -C libft
+	@make all -C libft -s
 
 clean		:
 	@make clean -C libft
